@@ -3,6 +3,10 @@
 <head>
     <title>Audiotarky - {{page.title}}</title>
     <meta name="monetization" content="{{site.ilp}}">
+    <meta charset="utf-8">
+    <meta name="description"
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&display=swap');
 
@@ -88,6 +92,10 @@
             background-color: whitesmoke;
         }
 
+        footer>p {
+            text-align: center;
+        }
+
         h1,
         h1~p {
             background-color: #FFAEBC;
@@ -139,13 +147,42 @@
         h2:nth-of-type(3)~p {
             background-color: #B4F8C8;
         }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .social-media-list {
+            font-size: 15px;
+            color: #2a2f33;
+            display: inline-block;
+            list-style: none;
+        }
+
+        .social-media-list>li {
+            display: inline-block;
+            padding: 1rem;
+        }
+
+        .icon>svg {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
 <body>
     {{content}}
     <footer>
-        &copy; Audiotarky, 2020
+        <ul class="social-media-list">
+            <li>{% include icon-twitter.html username=site.twitter_username %}</li>
+            <li>|</li>
+            <li>{% include icon-github.html username=site.github_username %}</li>
+        </ul>
+        <p>&copy; Audiotarky, 2020</p>
     </footer>
 </body>
 
