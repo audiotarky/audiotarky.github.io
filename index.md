@@ -11,8 +11,6 @@ title: coming soon
 ---
 Audiotarky is a new streaming platform, focussed on paying musicians directly & clearly for all the music they create.
 
-
-
 ## For musicians & producers
 
 > Audiotarky provides you with two ways to share & get paid for your creations.

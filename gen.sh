@@ -1,4 +1,6 @@
-source /home/metson/code/audiotarky.github.io/venv/bin/activate
+#!/bin/sh
+source venv/bin/activate
+
 python makepost.py artist Anechoics '$ilp.uphold.com/xZEy2Dg9nBMk'
 python makepost.py album Anechoics 'Live at the Greenbank'
 python makepost.py track Anechoics 'Connections' 'Connections 1 (propagating clocks)'

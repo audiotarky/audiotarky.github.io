@@ -15,3 +15,12 @@ layout: default
     {% endif %}
     {% endfor %}
 </ul>
+{% if page.ilp %}
+{% for payid in site.payid %}
+{% if payid.name == page.name %}
+{% if payid.ilp == page.ilp %}
+Send a direct payment with {% include icon-payid.html name=payid.slug notext=true %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}

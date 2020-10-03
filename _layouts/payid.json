@@ -1,0 +1,14 @@
+{
+    "addresses": [
+        {
+            "paymentNetwork": "ILP",
+            "environment": "MAINNET",
+            "addressDetailsType": "CryptoAddressDetails",
+            "addressDetails": {
+                "address": "{{ page.ilp | default: site.ilp}}"
+            }
+        }
+    ],
+    "version": "1.0",
+    "payId": "{{ page.slug }}$audiotarky.com"
+}

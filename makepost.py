@@ -47,9 +47,20 @@ wm_only: false
 no_embed: false
 ---'''
 
+PAYID_TEMPLATE = '''---
+name: {name}
+slug: {slug}
+ilp: {ilp}
+layout: payid
+categories:
+  - payid
+---
+'''
+
 
 class Templates(Enum):
     artist = ARTIST_TEMPLATE
+    payid = PAYID_TEMPLATE
     album = ALBUM_TEMPLATE
     track = TRACK_TEMPLATE
 
@@ -61,9 +72,14 @@ def get_layouts():
 
 
 def get_file(ptype, **kwargs):
-    filename = re.sub('[^\w\-_\.]', '-', kwargs['name'])
-    filename = re.sub('-{2,}', '-', filename).lower()
-    existing = PATH.glob(f'data/_{ptype}/*-{filename}.md')
+    ext = kwargs.get('extension', 'md')
+    if 'slug' in kwargs:
+        slug = kwargs['slug']
+    else:
+        slug = re.sub('[^\w\-_\.]', '-', kwargs['name'])
+        slug = re.sub('-{2,}', '-', slug).lower()
+    filename = f'{slug}.{ext}'
+    existing = PATH.glob(f'data/_{ptype}/*-{filename}')
     existing = list(existing)
     if len(existing) > 1:
         raise ValueError(f'many files found: {existing}')
@@ -71,8 +87,8 @@ def get_file(ptype, **kwargs):
         post = existing[0]
     else:
         d = datetime.date.today().isoformat()
-        post = PATH.joinpath(f'data/_{ptype}/{d}-{filename}.md')
-    return post, filename
+        post = PATH.joinpath(f'data/_{ptype}/{d}-{filename}')
+    return post, slug
 
 
 def exists(itemtype, name):
@@ -82,10 +98,16 @@ def exists(itemtype, name):
 
 class artist(ilcli.Command):
     name = 'artist'
+    restricted_names = ['audiotarky']
 
     def _init_arguments(self):
         self.add_argument('artist', help='Artist name')
-        self.add_argument('ilp', help='Artist ilp')
+        self.add_argument('ilp', help='Artist ilp', default='not set')
+
+    def _validate_arguments(self, args):
+        if args.artist in self.restricted_names:
+            self.err(f'{args.artist} is a restricted name, exiting')
+            return 1
 
     def _run(self, args):
         self.render(name=args.artist, ilp=args.ilp)
@@ -93,6 +115,13 @@ class artist(ilcli.Command):
     @classmethod
     def render(cls, **kwargs):
         render(cls.name, name=kwargs['name'], ilp=kwargs['ilp'])
+        if kwargs['ilp'] != 'not set':
+            render('payid',
+                   name=kwargs['name'],
+                   ilp=kwargs['ilp'],
+                   extension='json',
+                   slug=f'pay{kwargs["name"].title().replace(" ", "")}'
+                   )
 
 
 class album(ilcli.Command):
@@ -145,6 +174,8 @@ class audiotarky(ilcli.Command):
 
 def render(ptype, **kwargs):
     post, slug = get_file(ptype, **kwargs)
+    if 'slug' in kwargs:
+        del kwargs['slug']
     item_id = hashlib.md5()
     for k, v in kwargs.items():
         item_id.update(bytes(k, 'utf8'))

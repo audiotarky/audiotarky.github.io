@@ -5,7 +5,7 @@ description: >-
   Audiotarky is a new streaming platform, focussed on paying musicians directly & clearly for all the music they create.
 baseurl: ""
 url: "https://audiotarky.com"
-twitter_username: jekyllrb
+twitter_username: audiotarky
 github_username:  audiotarky
 ilp: "$ilp.uphold.com/WRPFhabhyrxF"
 permalink: /:slugified_categories/:title/index.html
@@ -19,10 +19,13 @@ collections:
   artist:
     output: true
     sort_by: name
-    permalink: /:slugified_categories/:title/index.html
+    permalink: /:title/index.html
   album:
     output: true
     permalink: /:slugified_categories/:title/index.html
+  payid:
+    output: true
+    permalink: /:slug
   track:
     output: true
     sort_by: track_number
