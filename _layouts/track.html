@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<h1>{{ page.name }} by {{ page.artist }} from {{ page.album }}</h1>
+
+<p>
+    <a href="/{{ page.artist | slugify }}">{{ page.artist }}</a>
+    <a href="/{{ page.artist | slugify }}/{{ page.album | slugify }}">{{ page.album }}</a>
+</p>
+
+<p>Released on Audiotarky, {{page.date | date: "%d %B %Y"}}.</p>

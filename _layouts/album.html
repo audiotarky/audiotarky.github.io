@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<h1>{{ page.name }} by {{ page.artist }}</h1>
+<p>Tracks</p>
+<ul>
+    {% for track in site.track %}
+    {% if track.album == page.name %}
+    {% if track.artist == page.artist %}
+    <li>
+        <a href="{{track.url}}">{{track.name}}</a>
+    </li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</ul>
+
+<p>Released on Audiotarky, {{page.date | date: "%d %B %Y"}}.</p>
+
+<p>
+    <a href="/{{ page.artist | slugify }}">{{ page.artist }}</a>
+</p>

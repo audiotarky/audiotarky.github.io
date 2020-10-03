@@ -1,0 +1,28 @@
+title: Audiotarky
+email: your-email@example.com
+description: >-
+  Audio Autarky
+baseurl: ""
+url: "https://audiotarky.com"
+twitter_username: jekyllrb
+github_username:  audiotarky
+ilp: "$ilp.uphold.com/WRPFhabhyrxF"
+permalink: /:slugified_categories/:title/index.html
+exclude:
+ - CNAME
+ - makepost.py
+ - venv
+ - gen.sh
+collections_dir: data
+collections:
+  artist:
+    output: true
+    sort_by: name
+    permalink: /:slugified_categories/:title/index.html
+  album:
+    output: true
+    permalink: /:slugified_categories/:title/index.html
+  track:
+    output: true
+    sort_by: track_number
+    permalink: /:slugified_categories/:title/index.html
