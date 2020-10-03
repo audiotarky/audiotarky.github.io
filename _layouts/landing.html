@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Audiotarky - {{page.name}}</title>
+    <title>Audiotarky - {{page.title}}</title>
     <meta name="monetization" content="{{site.ilp}}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&display=swap');
@@ -11,8 +11,9 @@
             margin: 0;
             padding: 0;
             color: #2a2f33;
-            font-size: 14pt;
+            background-color: whitesmoke;
             font-family: 'Montserrat', sans-serif;
+            line-height: 1.5;
         }
 
         h1,
@@ -31,41 +32,60 @@
         h1,
         h2,
         p,
+        blockquote,
         footer {
-            padding: 1em;
+            padding: 1rem;
             margin: 0;
         }
 
+        hr {
+            border: 0;
+            height: 1px;
+            background: #FFAEBC;
+            background-image: linear-gradient(to right, #FFAEBC, whitesmoke, #FFAEBC);
+            color: whitesmoke;
+            width: 100%;
+            margin: 0;
+            padding: 0
+        }
+
         p {
-            padding: 0em 15% 2em;
-            line-height: 1.5em;
-            text-align: justify;
+            padding: 0em 15% 4rem;
+            text-align: left;
         }
 
-        @media only screen and (max-width: 800px) {
-            p {
-                padding: 0em 1em 2em;
-            }
-
+        @media (min-width: 768px) {
             body {
-                font-size: 12pt;
+                font-size: calc(0.5rem + ((1vw - 7.68px) * 0.6944));
+
+                /* Safari resize fix */
+                min-height: 0vw;
             }
         }
 
-        footer {
-            padding: 5em;
-            background-color: whitesmoke;
+        /* Prevent scaling beyond this breakpoint */
+        @media (min-width: 1920px) {
+            body {
+                font-size: 16px;
+            }
+
         }
 
         h1 {
-            font-size: 8em;
+            font-size: 10rem;
+            padding-bottom: 0rem;
+            padding-top: 10rem;
         }
 
         h1~p:first-of-type {
-            padding-top: 0;
-            font-size: 2em;
-            color: white;
-            text-shadow: #2a2f33 1px 1px 2px;
+            font-size: 2.5rem;
+            padding: 4rem 25%;
+            text-align: center;
+        }
+
+        footer {
+            padding: 5rem;
+            background-color: whitesmoke;
         }
 
         h1,
@@ -74,17 +94,19 @@
         }
 
         h1,
-        h2 {
-            color: white;
-            text-shadow: #2a2f33 2px 2px 3px;
+        h2,
+        h1~p:first-of-type {
+            color: whitesmoke;
+            text-shadow: rgb(42, 47, 51, 0.75) 1px 1px 2px;
         }
 
         h2 {
-            font-size: 3em;
+            padding: 4rem;
+            font-size: 4rem;
         }
 
         p {
-            font-size: 1em;
+            font-size: 1.5rem;
         }
 
 
@@ -95,13 +117,15 @@
 
         /* Musicians */
         h2:first-of-type,
-        h2:first-of-type~p {
+        h2:first-of-type~p,
+        h2:first-of-type~blockquote {
             background-color: #FBE7C6;
         }
 
-        strong {
-            font-size: 1.25em;
-            line-height: 1.5;
+        blockquote p {
+            font-size: 2.5rem;
+            padding: 2rem 25%;
+            text-align: center;
         }
 
         /* Fans */
