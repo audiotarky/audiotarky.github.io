@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>Audiotarky - {{page.name}}</title>
+    <meta name="monetization" content="{{site.ilp}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&display=swap');
+
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #2a2f33;
+            font-size: 14pt;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Bebas Neue', cursive;
+        }
+
+        a,
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: #2a2f33;
+        }
+
+        h1,
+        h2,
+        p,
+        footer {
+            padding: 1em;
+            margin: 0;
+        }
+
+        p {
+            padding: 0em 15% 2em;
+            line-height: 1.5em;
+            text-align: justify;
+        }
+
+        @media only screen and (max-width: 800px) {
+            p {
+                padding: 0em 1em 2em;
+            }
+
+            body {
+                font-size: 12pt;
+            }
+        }
+
+        footer {
+            padding: 5em;
+            background-color: whitesmoke;
+        }
+
+        h1 {
+            font-size: 8em;
+        }
+
+        h1~p:first-of-type {
+            padding-top: 0;
+            font-size: 2em;
+            color: white;
+            text-shadow: #2a2f33 1px 1px 2px;
+        }
+
+        h1,
+        h1~p {
+            background-color: #FFAEBC;
+        }
+
+        h1,
+        h2 {
+            color: white;
+            text-shadow: #2a2f33 2px 2px 3px;
+        }
+
+        h2 {
+            font-size: 3em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+
+        h1+p,
+        h2+p {
+            padding-top: 0em;
+        }
+
+        /* Musicians */
+        h2:first-of-type,
+        h2:first-of-type~p {
+            background-color: #FBE7C6;
+        }
+
+        strong {
+            font-size: 1.25em;
+            line-height: 1.5;
+        }
+
+        /* Fans */
+        h2:nth-of-type(2),
+        h2:nth-of-type(2)~p {
+            background-color: #A0E7E5;
+        }
+
+        /* About */
+        h2:nth-of-type(3),
+        h2:nth-of-type(3)~p {
+            background-color: #B4F8C8;
+        }
+    </style>
+</head>
+
+<body>
+    {{content}}
+    <footer>
+        &copy; Audiotarky, 2020
+    </footer>
+</body>
+
+</html>
