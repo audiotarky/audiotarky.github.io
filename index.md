@@ -17,7 +17,7 @@ Audiotarky is a new streaming platform, focussed on paying musicians directly & 
 
 We offer a streaming platform, where you are paid directly as people listen to your music. These payments are done via [Coil][], and start at [$0.36 an hour](https://help.coil.com/accounts/membership-accounts#how-much-do-you-pay-out-to-creators). We believe this to be the highest "pay per stream" rate out there.
 
-We also provide a way to share & be remunerated for your musical scraps, offcuts, out takes and unfinished symphonies. Have a great beat you're never going to use? Some sweet chord progression that sounds lovely but doesn't quite fit with where your heads at? Upload it to Audiotarky and let others use it in their creations. You will be streamed payment as people browse your library.
+We also provide a way to share & be remunerated for your musical scraps, offcuts, out takes and unfinished symphonies. Have a great beat you're never going to use? Some sweet chord progression that sounds lovely but doesn't quite fit with where your head's at? Upload it to Audiotarky and let others use it in their creations. You will be streamed payment as people browse your library.
 
 You get to [choose the license](https://creativecommons.org/choose/) for all your creations, decide whether they are only available to Coil users and whether they can be embeded/shared on other sites.
 
