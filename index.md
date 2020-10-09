@@ -31,9 +31,10 @@ This means you can pay a single subscription and enjoy content of all kinds acro
 
 We're focussed on getting the musician experience right from day one, but plan to find ways to help fans find new & exciting music & be paid for sharing music with friends.
 
+
 ## About
 
-Audiotarky is funded by [Grant for the web](https://www.grantfortheweb.org) and aims to diversify income streams for musicians via [Web Monetization](https://webmonetization.org/). We get micropayments as people browse the site, and take the first 10 seconds of payment when people listen to music.
+Audiotarky is funded by [Grant for the web](https://www.grantfortheweb.org) and aims to diversify income streams for musicians via [Web Monetization](https://webmonetization.org/). We get micropayments as people browse the site, and take the last 10 seconds of payment when people listen to music. You can follow our progress on [Twitter](https://twitter.com/audiotarky) or [our blog](https://blog.audiotarky.com/).
 
 Audiotarky is based in Bristol, UK.
 

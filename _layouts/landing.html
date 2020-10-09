@@ -87,13 +87,28 @@
             text-align: center;
         }
 
+
         footer {
-            padding: 5rem;
-            background-color: whitesmoke;
+            /* margin-top: 4rem; */
+            padding: 2.5rem 2.5rem;
+            background-color: #2a2f33;
+            color: whitesmoke;
         }
 
-        footer>p {
+        footer>p,
+        footer>ul {
             text-align: center;
+            font-size: 1rem;
+            padding: 1.5rem;
+        }
+
+        footer a,
+        footer a:link,
+        footer a:visited,
+        footer a:hover,
+        footer a:active,
+        footer li {
+            color: whitesmoke;
         }
 
         h1,
@@ -177,12 +192,15 @@
 <body>
     {{content}}
     <footer>
+        <p>{{ site.description }}</p>
         <ul class="social-media-list">
             <li>{% include icon-twitter.html username=site.twitter_username %}</li>
             <li>|</li>
             <li>{% include icon-github.html username=site.github_username %}</li>
+            <li>|</li>
+            <li><a href="https://forms.gle/7irCZKrSUaZjRnZk7">Be a beta artist!</a></li>
         </ul>
-        <p>&copy; Audiotarky, 2020</p>
+        <p>&copy; <a href="https://audiotarky.com">Audiotarky</a>, 2020</p>
     </footer>
 </body>
 
