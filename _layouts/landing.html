@@ -203,10 +203,16 @@
         <p>&copy; <a href="https://audiotarky.com">Audiotarky</a>, 2020</p>
     </footer>
 
-<!-- Fathom - beautiful, simple website analytics -->
-<script src="https://cdn.usefathom.com/script.js" site="YUBCLSQE" defer></script>
-<!-- / Fathom -->
-
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" site="YUBCLSQE" defer></script>
+    <!-- / Fathom -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function (e) {
+            if (document.monetization) {
+                window.fathom.trackGoal('2QVO4MF4', 0);
+            };
+        });
+    </script>
 </body>
 
 </html>
