@@ -4,8 +4,13 @@ layout: default
 <h1>{{ page.name }} by {{ page.artist }} from {{ page.album }}</h1>
 
 <p>
-    <a href="/{{ page.artist | slugify }}">{{ page.artist }}</a>
-    <a href="/{{ page.artist | slugify }}/{{ page.album | slugify }}">{{ page.album }}</a>
+    <a href="{{ page.artist | slugify | relative_url}}">{{ page.artist }}</a>
+    <a href="{{ page.artist | slugify }}/{{ page.album | slugify | relative_url}}">{{ page.album }}</a>
 </p>
 
 <p>Released on Audiotarky, {{page.date | date: "%d %B %Y"}}.</p>
+
+
+{% include mp3.html title=page.track.title cover=page.track.cover mp3=page.track.mp3%}
+
+<a href="{{page.audio}}">Track</a>

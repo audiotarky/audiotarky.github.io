@@ -45,6 +45,10 @@ track_number: 0
 license: {license}
 wm_only: false
 no_embed: false
+track:
+    mp3: /music/5pianos.mp3
+    cover: /images/piano.png
+    title: {name}
 ---'''
 
 PAYID_TEMPLATE = '''---

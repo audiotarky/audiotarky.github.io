@@ -206,7 +206,8 @@
     <!-- Fathom - beautiful, simple website analytics -->
     <script src="https://cdn.usefathom.com/script.js" site="YUBCLSQE" defer></script>
     <!-- / Fathom -->
-    <script src="/analytics.js" defer></script>
+    <script src="{{ 'analytics.js' | relative_url}}" defer></script>
+    <script src="{{ 'authz.js' | relative_url}}" defer></script>
 </body>
 
 </html>

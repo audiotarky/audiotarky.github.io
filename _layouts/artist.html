@@ -10,7 +10,7 @@ layout: default
     {% for album in site.album %}
     {% if album.artist == page.name %}
     <li>
-        <a href="{{album.url}}">{{album.name}}</a>
+        <a href="{{album.url | relative_url}}">{{album.name}}</a>
     </li>
     {% endif %}
     {% endfor %}

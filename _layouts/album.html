@@ -8,7 +8,7 @@ layout: default
     {% if track.album == page.name %}
     {% if track.artist == page.artist %}
     <li>
-        <a href="{{track.url}}">{{track.name}}</a>
+        <a href="{{track.url | relative_url}}">{{track.name}}</a>
     </li>
     {% endif %}
     {% endif %}
@@ -18,5 +18,5 @@ layout: default
 <p>Released on Audiotarky, {{page.date | date: "%d %B %Y"}}.</p>
 
 <p>
-    <a href="/{{ page.artist | slugify }}">{{ page.artist }}</a>
+    <a href="{{ page.artist | slugify | relative_url}}">{{ page.artist }}</a>
 </p>

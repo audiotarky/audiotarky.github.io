@@ -2,11 +2,11 @@ title: Audiotarky
 email: your-email@example.com
 description: >-
   Audiotarky (Audio Autarky) is a new streaming platform, focussed on paying musicians directly & clearly for all the music they create.
-baseurl: ""
+baseurl: "/site"
 url: "https://audiotarky.com"
 twitter_username: audiotarky
 github_username:  audiotarky
-ilp: "$ilp.uphold.com/WRPFhabhyrxF"
+ilp: "$wm.vanilla.so/pay/e5a34e66-5b0e-408a-bdd2-89f483c54a1a"
 permalink: /:slugified_categories/:title/index.html
 exclude:
  - CNAME
