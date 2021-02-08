@@ -1,213 +1,39 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Audiotarky - {{page.title}}</title>
-    <meta name="monetization" content="{{site.ilp}}">
+    <meta name="generator" content="Hugo 0.78.2" />
     <meta charset="utf-8">
-    <meta name="description"
-        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <title>Audiotarky - The fair streaming platform</title>
+    <meta name="monetization" content="$webmonetization.org/api/receipts/%24ilp.uphold.com%2FWRPFhabhyrxF">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&display=swap');
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        body {
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            color: #2a2f33;
-            background-color: whitesmoke;
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.5;
-        }
+    <meta property="og:title" content="Audiotarky" />
+    <meta property="og:description"
+        content="Audiotarky is a new streaming platform, that pays musicians directly as people listen to their songs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.audiotarky.com/$/" />
+    <meta property="og:image" content="https://www.audiotarky.com/$/assets/images/audiotarky_logo_v1@2x.png" />
 
-        h1,
-        h2 {
-            font-family: 'Bebas Neue', cursive;
-        }
+    <meta property="og:site_name" content="Audiotarky" />
 
-        a,
-        a:link,
-        a:visited,
-        a:hover,
-        a:active {
-            color: #2a2f33;
-        }
+    <link rel="apple-touch-icon" href="icon.png">
 
-        h1,
-        h2,
-        p,
-        blockquote,
-        footer {
-            padding: 1rem;
-            margin: 0;
-        }
+    <meta name="theme-color" content="#fafafa">
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #FFAEBC;
-            background-image: linear-gradient(to right, #FFAEBC, whitesmoke, #FFAEBC);
-            color: whitesmoke;
-            width: 100%;
-            margin: 0;
-            padding: 0
-        }
+    <link href="https://www.audiotarky.com/$/styles/main.min.css" rel="stylesheet" />
 
-        p {
-            padding: 0em 15% 4rem;
-            text-align: left;
-        }
-
-        @media (min-width: 768px) {
-            body {
-                font-size: calc(0.5rem + ((1vw - 7.68px) * 0.6944));
-
-                /* Safari resize fix */
-                min-height: 0vw;
-            }
-        }
-
-        /* Prevent scaling beyond this breakpoint */
-        @media (min-width: 1920px) {
-            body {
-                font-size: 16px;
-            }
-
-        }
-
-        h1 {
-            font-size: 10rem;
-            padding-bottom: 0rem;
-            padding-top: 10rem;
-        }
-
-        h1~p:first-of-type {
-            font-size: 2.5rem;
-            padding: 4rem 25%;
-            text-align: center;
-        }
+    <link rel="stylesheet" href="https://use.typekit.net/ead5fpt.css" async>
 
 
-        footer {
-            /* margin-top: 4rem; */
-            padding: 2.5rem 2.5rem;
-            background-color: #2a2f33;
-            color: whitesmoke;
-        }
-
-        footer>p,
-        footer>ul {
-            text-align: center;
-            font-size: 1rem;
-            padding: 1.5rem;
-        }
-
-        footer a,
-        footer a:link,
-        footer a:visited,
-        footer a:hover,
-        footer a:active,
-        footer li {
-            color: whitesmoke;
-        }
-
-        h1,
-        h1~p {
-            background-color: #FFAEBC;
-        }
-
-        h1,
-        h2,
-        h1~p:first-of-type {
-            color: whitesmoke;
-            text-shadow: rgb(42, 47, 51, 0.75) 1px 1px 2px;
-        }
-
-        h2 {
-            padding: 4rem;
-            font-size: 4rem;
-        }
-
-        p {
-            font-size: 1.5rem;
-        }
-
-
-        h1+p,
-        h2+p {
-            padding-top: 0em;
-        }
-
-        /* Musicians */
-        h2:first-of-type,
-        h2:first-of-type~p,
-        h2:first-of-type~blockquote {
-            background-color: #FBE7C6;
-        }
-
-        blockquote p {
-            font-size: 2.5rem;
-            padding: 2rem 25%;
-            text-align: center;
-        }
-
-        /* Fans */
-        h2:nth-of-type(2),
-        h2:nth-of-type(2)~p {
-            background-color: #A0E7E5;
-        }
-
-        /* About */
-        h2:nth-of-type(3),
-        h2:nth-of-type(3)~p {
-            background-color: #B4F8C8;
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-        }
-
-        .social-media-list {
-            font-size: 15px;
-            color: #2a2f33;
-            display: inline-block;
-            list-style: none;
-        }
-
-        .social-media-list>li {
-            display: inline-block;
-            padding: 1rem;
-        }
-
-        .icon>svg {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            vertical-align: middle;
-        }
-    </style>
 </head>
 
 <body>
-    {{content}}
-    <footer>
-        <p>{{ site.description }}</p>
-        <ul class="social-media-list">
-            <li>{% include icon-twitter.html username=site.twitter_username %}</li>
-            <li>|</li>
-            <li>{% include icon-github.html username=site.github_username %}</li>
-            <li>|</li>
-            <li><a href="https://forms.gle/7irCZKrSUaZjRnZk7">Be a beta artist!</a></li>
-        </ul>
-        <p>&copy; <a href="https://audiotarky.com">Audiotarky</a>, 2020</p>
-    </footer>
-
-    <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" site="YUBCLSQE" defer></script>
-    <!-- / Fathom -->
-    <script src="{{ 'analytics.js' | relative_url}}" defer></script>
-    <script src="{{ 'authz.js' | relative_url}}" defer></script>
+    <div class="container text-center">
+        <img src="https://www.audiotarky.com/$/images/audiotarky_ident@2x.png" alt="Coming soon..." />
+    </div>
 </body>
 
 </html>
